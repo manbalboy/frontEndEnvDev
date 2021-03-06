@@ -94,8 +94,10 @@
 
 ####    2-3-2.webpack.config.js 
         - 웹팩 config 파일 
-        
+
         ```
+            ## <webpack.config.js>
+
             const path = require('path');
             module.exports = {
                 mode : 'development',
@@ -108,6 +110,7 @@
                 }
             }
         ```
+
 
 
 

@@ -5,7 +5,7 @@ module.exports = {
         main :'./history/app.js'
     },
     output : {
-        path : path.resovle('./dist'),
+        path : path.resolve('./history/dist'),
         filename: '[name].js'
     }
 }
