@@ -1,4 +1,6 @@
 const path = require('path');
+const webpack = require('webpack');
+
 const MyWebpackPlugin = require('./my-webpack-plugin');
 module.exports = {
     mode : 'development',
@@ -42,6 +44,9 @@ module.exports = {
         ]
     },
     plugins : [
-        new MyWebpackPlugin(),
+        new webpack.BannerPlugin({
+            banner : `Build Date : ${new Date().toLocaleString() }`
+        })
+        // new MyWebpackPlugin(),
     ]
 }
