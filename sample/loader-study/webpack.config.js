@@ -17,8 +17,8 @@ module.exports = {
                     'css-loader'
                 ]
             },
-            {
-                test :  /\.png$/,
+            /*{
+                test :  /\.(png|jpg)$/,
                 loader : 'file-loader',
                 options : {
                     publicPath : './dist/',
@@ -27,6 +27,16 @@ module.exports = {
                 // use : [
                 //     'file-loader'
                 // ]
+            }*/
+
+            {
+                test :  /\.(png|jpg)$/,
+                loader : 'url-loader',
+                options : {
+                    publicPath : './dist/',
+                    name  : '[name].[ext]?[hash]',
+                    // limit : 20000, //20kb
+                } 
             }
         ]
     }
