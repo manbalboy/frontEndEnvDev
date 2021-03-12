@@ -1,8 +1,5 @@
 # 프론트엔드 개발 환경의 이해 
 
-"프론트엔드 개발 환경의 이해" 강의 자료입니다.
-
-블로그 연재물 "[프론트엔드 개발 환경의 이해](http://jeonghwan-kim.github.io/series/2019/12/09/frontend-dev-env-npm.html)"를 읽어보시기 바랍니다.
 
 ## 폴더 구성
 
