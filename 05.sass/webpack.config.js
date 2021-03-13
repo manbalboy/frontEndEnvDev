@@ -5,10 +5,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-process.env.NODE_ENV = process.env.NODE_ENV || "development";
-
+const mode = process.env.NODE_ENV || "development";
 module.exports = {
-  mode: "development",
+  mode,
   entry: {
     main: "./src/app.js"
   },
@@ -49,20 +48,18 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       templateParameters: {
-        env: process.env.NODE_ENV === "development" ? "(개발용)" : ""
+        env:mode === "development" ? "(개발용)" : ""
       },
       minify:
-        process.env.NODE_ENV === "production"
+       mode === "production"
           ? {
               collapseWhitespace: true, // 빈칸 제거
               removeComments: true // 주석 제거
             }
           : false,
-      hash: process.env.NODE_ENV === "production"
+      hash:mode === "production"
     }),
     new CleanWebpackPlugin(),
-    ...(process.env.NODE_ENV === "production"
-      ? [new MiniCssExtractPlugin({ filename: `[name].css` })]
-      : [])
+    new MiniCssExtractPlugin({ filename: `[name].css` })
   ]
 };
